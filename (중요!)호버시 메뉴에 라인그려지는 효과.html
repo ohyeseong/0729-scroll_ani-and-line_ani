@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Caprasimo&display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul, li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        body{
+            font-family: "Caprasimo", serif;
+        }
+
+        .wrap{
+            height: 100vh;
+            background-color: #111;
+        }
+
+        .inner{
+            height: 100%;
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .nav_list{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav_list li{}
+
+        .nav_list li a{
+            color: white;
+            font-size: 150px;
+            line-height: 1;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            
+        }
+        .nav_list li a .text{
+            animation: text_opa 2s 2s;
+            display: block;
+            position: relative;
+            z-index: 50;
+        }
+
+        @keyframes text_opa{
+            0%{
+                opacity: 0;
+                color: #3535ff;
+                transform: translateX(-50%);
+            }
+            100%{
+                opacity: 1;
+                color: white;
+                transform: translateX(0);
+            }
+        }
+
+        .nav_list li a .mask1{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* width: 100%; */
+            background-color: white;
+            height: 100%;
+            animation: text_mask1 2s 1s;
+            z-index: 100;
+        }
+
+        @keyframes text_mask1{
+            0%{
+                width: 0;
+                transform: translateX(0);
+            }
+            50%{
+                width: 100%;
+                transform: translateX(0);
+            }
+            100%{
+                width: 100%;
+                transform: translateX(101%);
+            }
+        }
+        .nav_list li a .mask2{
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 40%;
+            background-color: yellow;
+            transition: all 0.3s;
+            z-index: 20;
+        }
+
+        .nav_list li:hover a .mask2{
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <section class="inner">
+            <ul class="nav_list">
+                <li>
+                    <a href="#">
+                        <span class="text">Today</span>
+                        <span class="mask1"></span>
+                        <span class="mask2"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="text">Image Mask</span>
+                        <span class="mask1"></span>
+                        <span class="mask2"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="text">Text Mask</span>
+                        <span class="mask1"></span>
+                        <span class="mask2"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="text">Line</span>
+                        <span class="mask1"></span>
+                        <span class="mask2"></span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

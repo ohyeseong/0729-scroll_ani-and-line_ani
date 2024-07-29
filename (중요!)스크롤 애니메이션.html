@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+
+        })// jq
+
+        $(window).scroll(function(){
+            var t = $(window).scrollTop();
+            console.log(t);
+
+            if(t >= 400){
+                $(".section2 p").addClass("ani");
+            }else{
+                $(".section2 p").removeClass("ani");
+            }
+            
+            if(t >= 600){
+                $(".section3 p").addClass("ani")
+            }else{
+                $(".section3 p").removeClass("ani");
+            }
+
+            if(t >= 800){
+                $(".section4 .p1, .section4 .p2").addClass("ani")
+            }else{
+                $(".section4 .p1, .section4 .p2").removeClass("ani")
+            }
+
+            if(t >= 1000){
+                $(".section5 p").addClass("ani")
+            }else{
+                $(".section5 p").removeClass("ani");
+            }
+        })// scroll
+    </script>
+
+    <style type="text/css">
+        div{
+            border: 5px solid red;
+        }
+
+        .section1{
+            height: 700px;
+        }
+        .section2{
+            height: 300px;
+            position: relative;
+        }
+
+        .section2 p{
+            position: absolute;
+            left: -100%;
+            opacity: 0;
+            font-size: 100px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .section2 p.ani{
+            left: 0;
+            opacity: 1;
+        }
+
+        .section3{
+            height: 200px;
+            position: relative;
+        }
+
+        .section3 p{
+            font-size: 50px;
+            position: absolute;
+            right: -100%;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .section3 p.ani{
+            opacity: 1;
+            right: 300px;
+        }
+
+        .section4{
+            height: 500px;
+            position: relative;
+            font-size: 50px;
+        }
+
+        .section4 .p1{
+            position: absolute;
+            left: -100%;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .section4 .p1.ani{
+            opacity: 1;
+            left: 200px;
+        }
+
+        .section4 .p2{
+            position: absolute;
+            opacity: 0;
+            right: -100%;
+            transition: all 1s 0.3s;
+        }
+        .section4 .p2.ani{
+            opacity: 1;
+            right: 300px;
+        }
+
+        .section5{
+            height: 400px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .section5 p{
+            opacity: 0;
+            transition: all 1s 0.3s;
+        }
+        .section5 p.ani{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="section1">
+        메인이미지
+    </div>
+    
+    <div class="section2">
+        <p>section2</p>
+    </div>
+
+    <div class="section3">
+        <p>section3</p>
+    </div>
+
+    <div class="section4">
+        <p class="p1">section4 left</p>
+        <p class="p2">section4 right</p>
+    </div>
+
+    <div class="section5">
+        <p>section5</p>
+    </div>
+</body>
+</html>

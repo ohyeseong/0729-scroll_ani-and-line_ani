@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                alert(".test: " + $(".test").text());
+            })
+
+            $(".btn2").click(function(){
+                var txt = $(".test").html();
+                console.log("html: ", txt);
+            })
+
+            $(".btn3").click(function(){
+                var v_val = $("#box").var();
+                alert("value" + v_val);
+            })
+        })// jq
+    </script>
+</head>
+<body>
+    <p class="test">this is some <b>bold</b> text in para</p>
+
+    <button class="btn1">show text</button>
+    <button class="btn2">hide text</button>
+
+    <p>name: <input type="text" value="OH" id="box"></p>
+    <button class="btn3">show value</button>
+</body>
+</html>

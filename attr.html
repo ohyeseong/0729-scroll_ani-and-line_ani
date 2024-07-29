@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $("p").append("안녕하세요"); // 대상 뒤에 추가하기
+            })
+
+            $(".btn2").click(function(){
+                $("ol").append("<li>append item</li>") // 리스트 끝에 추가하기
+            })
+
+            $(".btn3").click(function(){
+                $("p").prepend("<b>앞으로</b>"); // 대상 앞에 추가하기
+            })
+            
+            $(".btn4").click(function(){
+                $("ol").prepend("<li>prepend</li>"); // 리스트 처음에 추가하기
+            })
+
+            $(".btn5").click(function(){
+                $(".img").before("<b>before</b>")
+            })
+
+            $(".btn6").click(function(){
+                $(".img").after("<b>after</b>")
+            })
+        })// jQuery
+    </script>
+</head>
+<body>
+    <p>문단1</p>
+    <p>문단2</p>
+
+    <ol>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+    </ol>
+
+    <button class="btn1">append text</button>
+    <button class="btn2">append list</button>
+
+    <button class="btn3">prepend text</button>
+    <button class="btn4">prepend list</button>
+
+    <img src="source/normal_01.png" alt="" class="img">
+
+    <button class="btn5">insert before</button>
+    <button class="btn6">insert after</button>
+</body>
+</html>

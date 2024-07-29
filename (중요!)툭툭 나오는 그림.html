@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(document).ready(function(){
+            $(".list img").each(function(n){
+
+                setTimeout(function(){
+                    $(".list img").eq(n).addClass("ani")
+                }, 1000*n)
+            })
+
+            $(".box li").each(function(i){
+                console.log("이치 순서:", i);
+            })
+        })
+    </script>
+
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .list{
+            width: 1200px;
+            height: 500px;
+            margin: 0 auto;
+            /* background-color: skyblue; */
+            position: relative;
+        }
+        .list img{
+            position: absolute;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .list img.ani{
+            opacity: 1;
+        }
+        .list img:nth-child(1){
+            right: 100px;
+            bottom: 0;
+        }
+        .list img:nth-child(2){
+            left: 200px;
+            top: 50px;
+        }
+        .list img:nth-child(3){
+            bottom: 0;
+            left: 50px;
+        }
+        .list img:nth-child(4){
+            bottom: 200px;
+            right: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <img src="source/cha01.png" alt="nin1">
+        <img src="source/cha02.png" alt="nin2">
+        <img src="source/cha03.png" alt="nin3">
+        <img src="source/cha04.png" alt="nin4">
+    </div>
+
+    <ul class="box">
+        <li><a href="#">list1</a></li>
+        <li><a href="#">list2</a></li>
+        <li><a href="#">list3</a></li>
+        <li><a href="#">list4</a></li>
+        <li><a href="#">list5</a></li>
+        <li><a href="#">list6</a></li>
+    </ul>
+</body>
+</html>
